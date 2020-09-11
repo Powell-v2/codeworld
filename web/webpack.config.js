@@ -1,9 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: './js/codeworld.js',
+  entry: {
+    polyfills: './js/polyfills.js',
+    index: './js/codeworld.js',
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   mode: 'development',
