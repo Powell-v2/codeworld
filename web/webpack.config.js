@@ -29,6 +29,34 @@ module.exports = () => {
             },
           },
         },
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: [require('autoprefixer')],
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(png|svg|jpe?g|gif)$/,
+          loader: 'url-loader',
+        },
+        {
+          test: /\.(woff2?|ttf|otf)$/,
+          loader: 'url-loader',
+        },
       ],
     },
   };

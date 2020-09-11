@@ -51,6 +51,16 @@ import * as DirTree from './utils/directoryTree.js';
 import { sendHttp } from './utils/network.js';
 import { onObjectPropertyChange } from './utils/object.js';
 
+import '../css/theme-variables.css';
+import '../css/codeworld.css';
+import '../css/codemirror.css';
+import '../css/ambiance.css';
+import '../css/lint.css';
+import '../css/show-hint.css';
+import '../css/codeworld-cm.css';
+import '../css/codeExplorer.css';
+import '../css/directoryTree.css';
+
 init();
 
 function attachEventListeners() {
