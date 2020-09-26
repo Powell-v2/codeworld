@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -13,10 +14,18 @@ module.exports = () => {
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname),
     },
     mode,
     devtool: isProduction ? 'source-map' : 'inline-source-map',
+    plugins: [
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: 'index_proto.html',
+        scriptLoading: 'defer',
+        favicon: path.resolve(__dirname, 'favicon.ico'),
+      }),
+    ],
     module: {
       rules: [
         {

@@ -28,3 +28,6 @@ stack.yaml.lock
 cabal.project.local
 .DS_Store
 node_modules
+
+*.bundle.js
+index.html
